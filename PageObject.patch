@@ -1,0 +1,345 @@
+diff --git a/.classpath b/.classpath
+new file mode 100644
+index 0000000..0a1dadd
+--- /dev/null
++++ b/.classpath
+@@ -0,0 +1,26 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<classpath>
++	<classpathentry kind="src" output="target/classes" path="src/main/java">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
++		<attributes>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
++		<attributes>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="output" path="target/classes"/>
++</classpath>
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..b83d222
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1 @@
++/target/
+diff --git a/.project b/.project
+new file mode 100644
+index 0000000..23819b0
+--- /dev/null
++++ b/.project
+@@ -0,0 +1,23 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<projectDescription>
++	<name>PageObject</name>
++	<comment></comment>
++	<projects>
++	</projects>
++	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.jdt.core.javabuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.m2e.core.maven2Builder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++	</buildSpec>
++	<natures>
++		<nature>org.eclipse.jdt.core.javanature</nature>
++		<nature>org.eclipse.m2e.core.maven2Nature</nature>
++	</natures>
++</projectDescription>
+diff --git a/.settings/org.eclipse.core.resources.prefs b/.settings/org.eclipse.core.resources.prefs
+new file mode 100644
+index 0000000..f9fe345
+--- /dev/null
++++ b/.settings/org.eclipse.core.resources.prefs
+@@ -0,0 +1,4 @@
++eclipse.preferences.version=1
++encoding//src/main/java=UTF-8
++encoding//src/test/java=UTF-8
++encoding/<project>=UTF-8
+diff --git a/.settings/org.eclipse.jdt.core.prefs b/.settings/org.eclipse.jdt.core.prefs
+new file mode 100644
+index 0000000..abec6ca
+--- /dev/null
++++ b/.settings/org.eclipse.jdt.core.prefs
+@@ -0,0 +1,5 @@
++eclipse.preferences.version=1
++org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.5
++org.eclipse.jdt.core.compiler.compliance=1.5
++org.eclipse.jdt.core.compiler.problem.forbiddenReference=warning
++org.eclipse.jdt.core.compiler.source=1.5
+diff --git a/.settings/org.eclipse.m2e.core.prefs b/.settings/org.eclipse.m2e.core.prefs
+new file mode 100644
+index 0000000..f897a7f
+--- /dev/null
++++ b/.settings/org.eclipse.m2e.core.prefs
+@@ -0,0 +1,4 @@
++activeProfiles=
++eclipse.preferences.version=1
++resolveWorkspaceProjects=true
++version=1
+diff --git a/README.md b/README.md
+new file mode 100644
+index 0000000..99c12d4
+--- /dev/null
++++ b/README.md
+@@ -0,0 +1,2 @@
++#page object framework
++on mortgage calculator 
+\ No newline at end of file
+diff --git a/pom.xml b/pom.xml
+new file mode 100644
+index 0000000..07fdc9a
+--- /dev/null
++++ b/pom.xml
+@@ -0,0 +1,32 @@
++<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
++  <modelVersion>4.0.0</modelVersion>
++
++  <groupId>com.PageO</groupId>
++  <artifactId>PageObject</artifactId>
++  <version>0.0.1-SNAPSHOT</version>
++  <packaging>jar</packaging>
++
++  <name>PageObject</name>
++  <url>http://maven.apache.org</url>
++
++  <properties>
++    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
++  </properties>
++
++  <dependencies>
++    <dependency>
++      <groupId>junit</groupId>
++      <artifactId>junit</artifactId>
++      <version>4.11</version>
++      <scope>test</scope>
++    </dependency>
++    <dependency>
++      <groupId>org.seleniumhq.selenium</groupId>
++      <artifactId>selenium-java</artifactId>
++      <version>2.48.2</version>
++      <scope>test</scope>
++    </dependency>
++    
++  </dependencies>
++</project>
+diff --git a/src/main/java/com/PageO/PageObject/App.java b/src/main/java/com/PageO/PageObject/App.java
+new file mode 100644
+index 0000000..e4450e5
+--- /dev/null
++++ b/src/main/java/com/PageO/PageObject/App.java
+@@ -0,0 +1,13 @@
++package com.PageO.PageObject;
++
++/**
++ * Hello world!
++ *
++ */
++public class App 
++{
++    public static void main( String[] args )
++    {
++        System.out.println( "Hello World!" );
++    }
++}
+diff --git a/src/test/java/NewJava.java b/src/test/java/NewJava.java
+new file mode 100644
+index 0000000..fae643e
+--- /dev/null
++++ b/src/test/java/NewJava.java
+@@ -0,0 +1,32 @@
++
++public class NewJava {
++	String a = "2584";
++	static int n = 25;
++	static int n2 = 30;
++	boolean as = true; 
++	 static int n1 = (n+n2);
++	
++	
++	
++	public static void main(String[] args) {
++		
++		String a = firstJava1();
++		System.out.println("this value is int "+ a);
++		//firstJava();
++		System.out.println("this value is int "+ n1);
++		
++	}
++	
++	
++	
++	
++	
++	public void firstJava(){
++		System.out.println("my first junit project");
++	}
++
++	public static String firstJava1(){
++		System.out.println("my first junit project");
++		return "Pass";
++	}
++}
+diff --git a/src/test/java/com/PageO/PageObject/AbstractPage.java b/src/test/java/com/PageO/PageObject/AbstractPage.java
+new file mode 100644
+index 0000000..e913dcc
+--- /dev/null
++++ b/src/test/java/com/PageO/PageObject/AbstractPage.java
+@@ -0,0 +1,24 @@
++package com.PageO.PageObject;
++
++import java.util.concurrent.TimeUnit;
++
++import org.openqa.selenium.WebDriver;
++
++public class AbstractPage  {
++	protected WebDriver dr;
++	
++	public AbstractPage(WebDriver dr){
++		this.dr = dr;
++	}
++
++	public WebDriver getDriver(){
++		return dr;
++	}
++	public HomePage navigateToUrl(){
++		dr.get("https://www.ehealthinsurance.com/");
++		dr.manage().window().maximize();
++		dr.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
++		
++		return new HomePage(dr);
++	}
++}
+diff --git a/src/test/java/com/PageO/PageObject/DentalPage.java b/src/test/java/com/PageO/PageObject/DentalPage.java
+new file mode 100644
+index 0000000..d68d35e
+--- /dev/null
++++ b/src/test/java/com/PageO/PageObject/DentalPage.java
+@@ -0,0 +1,19 @@
++package com.PageO.PageObject;
++
++import org.openqa.selenium.By;
++import org.openqa.selenium.WebDriver;
++
++public class DentalPage extends AbstractPage {
++
++	public DentalPage(WebDriver dr){
++		super(dr);
++	}
++	public DentalPage fillZipdata(){
++		dr.findElement(By.id("zipCode")).sendKeys("07152");
++		return new DentalPage(dr);
++	}
++	public DentalResultpage submitClick(){
++		dr.findElement(By.id("goBtn")).click(); 
++		return new DentalResultpage(dr);
++	}
++}
+diff --git a/src/test/java/com/PageO/PageObject/DentalResultpage.java b/src/test/java/com/PageO/PageObject/DentalResultpage.java
+new file mode 100644
+index 0000000..da39d8c
+--- /dev/null
++++ b/src/test/java/com/PageO/PageObject/DentalResultpage.java
+@@ -0,0 +1,14 @@
++package com.PageO.PageObject;
++
++import org.openqa.selenium.By;
++import org.openqa.selenium.WebDriver;
++
++public class DentalResultpage extends AbstractPage{
++
++	public DentalResultpage(WebDriver dr){
++		super(dr);
++	}
++	public String getConfirmMess(){
++		return dr.findElement(By.xpath("//h2")).getText();
++	}
++}
+diff --git a/src/test/java/com/PageO/PageObject/HomePage.java b/src/test/java/com/PageO/PageObject/HomePage.java
+new file mode 100644
+index 0000000..1491d57
+--- /dev/null
++++ b/src/test/java/com/PageO/PageObject/HomePage.java
+@@ -0,0 +1,17 @@
++package com.PageO.PageObject;
++
++import org.openqa.selenium.By;
++import org.openqa.selenium.WebDriver;
++
++public class HomePage extends AbstractPage{
++
++	public HomePage(WebDriver dr){
++		super(dr);
++	}
++	
++	public DentalPage clickonDental(){
++		dr.findElement(By.xpath("//li[@id='ifp-dental']/a")).click();
++		
++		return new DentalPage(dr);
++	}
++}
+diff --git a/src/test/java/com/TestPageObject/DentalMessageTest.java b/src/test/java/com/TestPageObject/DentalMessageTest.java
+new file mode 100644
+index 0000000..21699c5
+--- /dev/null
++++ b/src/test/java/com/TestPageObject/DentalMessageTest.java
+@@ -0,0 +1,38 @@
++package com.TestPageObject;
++
++import junit.framework.Assert;
++
++import org.junit.After;
++import org.junit.Before;
++import org.junit.Test;
++import org.openqa.selenium.WebDriver;
++import org.openqa.selenium.firefox.FirefoxDriver;
++
++import com.PageO.PageObject.DentalPage;
++import com.PageO.PageObject.DentalResultpage;
++import com.PageO.PageObject.HomePage;
++
++public class DentalMessageTest {
++
++	WebDriver dr;
++	@Before
++	public void startDriver(){
++		dr = new FirefoxDriver();
++	}
++	@Test
++	public void dentalMessage(){
++		HomePage onHomePage = new HomePage(dr);
++		onHomePage = onHomePage.navigateToUrl();
++		DentalPage onDentalPage = onHomePage.clickonDental();
++		DentalResultpage onResult = onDentalPage.fillZipdata().submitClick();
++		try{
++		Assert.assertTrue(onResult.getConfirmMess().contains("Find the best Dental plan for you"));
++		} catch(Throwable t){
++			System.out.println("assertion is not match" + t);
++		}
++	}
++	@After
++	public void endUrl(){
++		dr.quit();
++	}
++}
