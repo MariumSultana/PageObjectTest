@@ -12,6 +12,7 @@ import com.PageO.PageObject.DentalPage;
 import com.PageO.PageObject.DentalResultpage;
 import com.PageO.PageObject.HomePage;
 
+@SuppressWarnings("deprecation")
 public class DentalMessageTest {
 
 	WebDriver dr;
